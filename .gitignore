@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# build & test output
+dist/
+coverage/
+*.log
+
+# terraform
+terraform/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+crash.log
+.terraform.lock.hcl.bak
+
+# kubernetes real secrets
+k8s/secret.yaml
+
+# editor / OS
+.idea/
+.DS_Store
+Thumbs.db

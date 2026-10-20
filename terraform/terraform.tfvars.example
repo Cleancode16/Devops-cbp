@@ -1,0 +1,9 @@
+# Copy to terraform.tfvars and fill in. NEVER commit terraform.tfvars (it is git-ignored).
+aws_region             = "us-east-1"
+instance_type          = "t2.micro"
+public_key_path        = "~/.ssh/id_ed25519.pub"
+ssh_cidr               = "203.0.113.10/32" # your public IP /32
+docker_username        = "your-dockerhub-username"
+image_tag              = "latest"
+qr_signing_secret      = "paste-output-of-openssl-rand-hex-32-here-at-least-32-chars"
+grafana_admin_password = "choose-a-strong-password"

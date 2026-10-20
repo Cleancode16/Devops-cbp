@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark; /* dark native date pickers, scrollbars */
+  }
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply min-h-screen overflow-x-hidden bg-[#05060f] font-sans text-slate-200 antialiased;
+  }
+  ::selection {
+    @apply bg-indigo-500/40 text-white;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-white/10 bg-slate-900/70 shadow-xl shadow-black/30 backdrop-blur;
+  }
+  .icon-tile {
+    @apply grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-indigo-400/20 bg-indigo-500/10 text-indigo-300;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-300;
+  }
+  .input {
+    @apply block h-11 w-full rounded-xl border border-white/10 bg-white/[0.03] px-3.5 text-sm text-slate-100 transition placeholder:text-slate-500 hover:border-white/20 focus:border-indigo-400/70 focus:bg-white/[0.05] focus:outline-none focus:ring-4 focus:ring-indigo-500/15 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  textarea.input {
+    @apply h-auto py-3;
+  }
+  .input::-webkit-calendar-picker-indicator {
+    @apply cursor-pointer rounded opacity-60 transition hover:opacity-100;
+  }
+  .btn {
+    @apply inline-flex h-11 select-none items-center justify-center gap-2 whitespace-nowrap rounded-xl px-4 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-4 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-b from-indigo-400 to-indigo-600 text-white shadow-lg shadow-indigo-600/30 ring-1 ring-inset ring-white/15 hover:from-indigo-300 hover:to-indigo-500 focus-visible:ring-indigo-500/40 active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply btn border border-white/10 bg-white/5 text-slate-200 hover:border-white/20 hover:bg-white/10 focus-visible:ring-white/10 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn text-slate-400 hover:bg-white/5 hover:text-slate-200 focus-visible:ring-white/10;
+  }
+  .skeleton {
+    @apply animate-pulse rounded-2xl border border-white/5 bg-slate-900/60;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-indigo-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent;
+  }
+}
